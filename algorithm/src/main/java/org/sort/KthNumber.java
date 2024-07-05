@@ -34,6 +34,7 @@ public class KthNumber {
 //            list.sort(Comparator.reverseOrder()); // 내림차순은 reverseOrder
             result.add(list.get(commands[i][2]-1));
         }
+        System.out.println(result);
         answer = new int[result.size()];
         for (int i = 0; i < result.size(); i++) {
             answer[i] = result.get(i);
