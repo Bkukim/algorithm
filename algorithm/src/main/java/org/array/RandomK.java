@@ -2,7 +2,6 @@ package org.array;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashSet;
 
 /**
  * packageName : org.array
@@ -24,13 +23,12 @@ public class RandomK {
     }
     public int[] solution(int[] arr, int k) {
         int[] answer = {};
-        HashSet<Integer> set = new HashSet<>();
-        ArrayList<Integer> list;
+        ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
-            set.add(arr[i]);
+            if (list.isEmpty() || !list.contains(arr[i])) {
+                list.add(arr[i]);
+            }
         }
-        list = new ArrayList<>(set);
-        list.sort(Comparator.naturalOrder());
         answer = new int[k];
         if (list.size() >= k) {
             for (int i = 0; i < k; i++) {
